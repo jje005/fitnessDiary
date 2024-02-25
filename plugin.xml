@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            icon="icons/splash.png">
+         <run
+               class="com.suresofttech.fitness.application.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Fitness Perspective"
+            class="com.suresofttech.fitness.application.Perspective"
+            id="com.suresofttech.fitness.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.suresofttech.fitness.view.FitnessTableView"
+            icon="icons/diary.png"
+            id="com.suresofttech.fitness.view.fitnessTableView"
+            name="기록"
+            restorable="true">
+      </view>
+      <view
+            class="com.suresofttech.fitness.view.FitnessImageView"
+            icon="icons/fitness.png"
+            id="com.suresofttech.fitness.view.fitnessImageView"
+            name="운동 부위 이미지"
+            restorable="true">
+      </view>
+      <view
+            class="com.suresofttech.fitness.view.FitnessTopView"
+            id="com.suresofttech.fitness.view.fitnessTopView"
+            name="FitnessTopView"
+            restorable="true">
+      </view>
+      <view
+            class="com.suresofttech.fitness.view.FitnessBottomView"
+            id="com.suresofttech.fitness.view.fitnessBottomView"
+            name="FitnessBottomView"
+            restorable="false">
+      </view>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="Fitness.application"
+            name="운동 일지">
+         <property
+               name="appName"
+               value="운동 일지">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/musle16.png,icons/musle32.png,icons/musle48.png,icons/musle64.png,icons/musle128.png,icons/musle256.png">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
